@@ -43,7 +43,8 @@ def init_regular_expression_map():
     regular_expression_map["xboxlive"] = re.compile("^\x58\x80........\xf3|^\x06\x58\x4e")
     regular_expression_map["yahoo"] = re.compile("^(ymsg|ypns|yhoo).?.?.?.?.?.?.?[lwt].*\xc0\x80")
     regular_expression_map["vnc"] = re.compile("^rfb 00[1-9]\.00[0-9]\x0a$")
-
+    for ke in regular_expression_map:
+        regular_expression_map[ke] = re.compile(regular_expression_map[ke])
 
 def get_application_name(dir_name_with_extension):
     if len(dir_name_with_extension.split(".")) > 1:
