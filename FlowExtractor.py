@@ -20,7 +20,8 @@ class FlowConstructor(object):
                     if ending_packet is not None:
                         self.merge_payload_from_start_to_end(i_packet_information, ending_packet, packet_information_list, file_object)
             #elif i_packet_information.get_protocol() == 'UDP':
-            #   self.merge_payloads(i_packet_information, packet_information_list, file_object)
+            #   self.merge_payloads(i_packet_information,
+            #   packet_information_list, file_object)
         return self.payload_map
 
     def find_other_packets_of_flow(self, packet_information, packet_information_list):
@@ -229,6 +230,7 @@ class FlowConstructor(object):
             count += 1
             flow_attr_string += str(count)
         return flow_attr_string
+
     def get_ip_packet_size(self, refined_packet_information_list):
         ip_packet_length = 0
         for i_packet_information in refined_packet_information_list:
@@ -276,8 +278,10 @@ class FlowConstructor(object):
         print(max_time - min_time)
         return max_time - min_time
 
-    # def merge_payloads(self, packet_information, packet_information_list, file_object):
-    #     if self.get_flow_attr_string(packet_information) not in self.already_filled_udp:
+    # def merge_payloads(self, packet_information, packet_information_list,
+    # file_object):
+    #     if self.get_flow_attr_string(packet_information) not in
+    #     self.already_filled_udp:
     #         payload = Payload()
     #         payload.set_flow('f' + str(len(self.payload_map)))
     #         payload.set_source_ip(packet_information.get_source_ip())
@@ -286,19 +290,25 @@ class FlowConstructor(object):
     #         payload.set_destination_port(packet_information.get_destination_port())
     #         payload.set_protocol(packet_information.get_protocol())
     #         payload.set_flow_duration(self.get_flow_duration_for_udp(packet_information_list))
-    #         returned_packet_information_list = self.find_other_packets_of_flow(packet_information, packet_information_list)
+    #         returned_packet_information_list =
+    #         self.find_other_packets_of_flow(packet_information,
+    #         packet_information_list)
     #         payload.set_number_of_packets(len(returned_packet_information_list))
     #         payload.set_size(self.get_ip_packet_size(returned_packet_information_list))
     #         payload.set_iat_list(self.get_iat(returned_packet_information_list))
-    #         payload.set_pkt_sizes(self.get_pkt_sizes(returned_packet_information_list, payload))
+    #         payload.set_pkt_sizes(self.get_pkt_sizes(returned_packet_information_list,
+    #         payload))
     #         if len(returned_packet_information_list) > 2:
     #             for i_packet_information in returned_packet_information_list:
     #                 if i_packet_information is None:
     #                     continue
     #                 payload.get_packet_list().append(i_packet_information)
-    #                 if payload.get_payload() is not None and i_packet_information.get_payload() is not None:
-    #                     payload.set_payload(payload.get_payload() + str(i_packet_information.get_payload()))
-    #                 elif payload.get_payload() is None and i_packet_information.get_payload() is not None:
+    #                 if payload.get_payload() is not None and
+    #                 i_packet_information.get_payload() is not None:
+    #                     payload.set_payload(payload.get_payload() +
+    #                     str(i_packet_information.get_payload()))
+    #                 elif payload.get_payload() is None and
+    #                 i_packet_information.get_payload() is not None:
     #                     payload.set_payload(str(i_packet_information.get_payload()))
     #             if payload.get_payload() is not None:
     #                 payload.set_payload_size(len(payload.get_payload()))

@@ -3,9 +3,9 @@ from posixfile import _posixfile_
 __author__ = 'KattaAnil'
 
 #!/usr/bin/env python
-
 import os
-import PacketExtractor, FlowExtractor
+import PacketExtractor
+import FlowExtractor
 from laserimplementation import  Laser
 import FileHandler
 import re
@@ -72,7 +72,6 @@ def get_filepaths(directory):
 
 # Run the above function and store its results in a variable.
 
-
 def generate_stats(output_file_object, list_of_file_paths, p_flow_extractor, packet_extractor):
     for fil in list_of_file_paths:
         packet_information_list = packet_extractor.read_file(fil)
@@ -87,7 +86,7 @@ def get_file_paths_with_app_name_map(input_root_dir, output_dir, p_flow_extracto
         inner_inner_dirs = {di : os.path.join(dir, di) for di in os.listdir(dir) if os.path.isdir(os.path.join(dir, di))}
         dir_paths_map.update(inner_inner_dirs)
     for ke in dir_paths_map:
-        with open(output_dir+get_application_name(ke)+".csv", 'w', 20) as output_file:
+        with open(output_dir + get_application_name(ke) + ".csv", 'w', 20) as output_file:
             output_file.write(FileHandler.format_string)
             p_flow_extractor.already_filled_tcp = set()
             p_flow_extractor.already_filled_udp = set()

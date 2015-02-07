@@ -114,13 +114,13 @@ class PacketInformation(object):
         return self._syn
 
     def set_ack(self, ack):
-        self._ack = ack;
+        self._ack = ack
 
     def get_ack(self):
         return self._ack
 
     def set_fin(self, fin):
-        self._fin = fin;
+        self._fin = fin
 
     def get_fin(self):
         return self._fin
@@ -132,7 +132,7 @@ class PacketInformation(object):
         return self._push
 
     def set_urgent(self, urgent):
-        self._urgent = urgent;
+        self._urgent = urgent
 
     def get_urgent(self):
         return self._urgent
@@ -194,7 +194,7 @@ class PacketInformation(object):
             self.set_urgent('Y')
              
     def __str__(self):
-        return_string = "Protocol: "+self.get_protocol()+" | Source IP: "+('{:<14}'.format(self.get_source_ip()))+" | Source PORT: "+('{:<6}'.format(str(self.get_source_port())))+" | Destination IP: "+('{:<14}'.format(self.get_destination_ip())) +" | Destination PORT: "+('{:<6}'.format(str(self.get_destination_port()))) + " | Payload Length: "+('{:<6}'.format(str(self.get_payload_length()))) + " | F: "+str(self.get_fin()) + " | S: "+str(self.get_syn()) + " | A: "+str(self.get_ack()) + " | P: "+str(self.get_push()) + " | U: "+str(self.get_urgent()) +" | R: "+str(self.get_rst()) +" | CS: "+str(self.get_client_or_server())
+        return_string = "Protocol: " + self.get_protocol() + " | Source IP: " + ('{:<14}'.format(self.get_source_ip())) + " | Source PORT: " + ('{:<6}'.format(str(self.get_source_port()))) + " | Destination IP: " + ('{:<14}'.format(self.get_destination_ip())) + " | Destination PORT: " + ('{:<6}'.format(str(self.get_destination_port()))) + " | Payload Length: " + ('{:<6}'.format(str(self.get_payload_length()))) + " | F: " + str(self.get_fin()) + " | S: " + str(self.get_syn()) + " | A: " + str(self.get_ack()) + " | P: " + str(self.get_push()) + " | U: " + str(self.get_urgent()) + " | R: " + str(self.get_rst()) + " | CS: " + str(self.get_client_or_server())
 
         """ return_string = 
                         "Application is: "+self.get_application()+"\n"+\

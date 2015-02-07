@@ -1,5 +1,7 @@
 #!/usr/bin/env python
-import FlowExtractor, FileHandler, PacketExtractor
+import FlowExtractor
+import FileHandler
+import PacketExtractor
 
 
 def main():
@@ -12,5 +14,5 @@ def main():
     returned_map = flow_extractor.construct_flow(packet_informations)
     FileHandler.FileHandler('output.csv').write_to_file(returned_map)
 
-if __name__=='__main__':
+if __name__ == '__main__':
     main()

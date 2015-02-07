@@ -125,7 +125,6 @@ format_string += "7 Payload In Hex,"
 
 format_string += "Applications\n"
 # format_string += "Payload \n"
-
 class FileHandler(object):
     def __init__(self, file_object):
         self._f = file_object  # open(filename, 'w')

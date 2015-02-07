@@ -1,5 +1,6 @@
 from scapy.packet import NoPayload
-import FlowExtractor, PacketExtractor
+import FlowExtractor
+import PacketExtractor
 
 __author__ = 'KattaAnil'
 
@@ -57,9 +58,9 @@ class Laser(object):
             return None
         payload1 = payload1[::-1]
         payload2 = payload2[::-1]
-        matrix = [0]*len(payload1)
+        matrix = [0] * len(payload1)
         for i in range(len(matrix)):
-            matrix[i] = [0]*len(payload2)
+            matrix[i] = [0] * len(payload2)
 
         for i in range(len(payload1)):
             for j in range(len(payload2)):
@@ -120,7 +121,7 @@ class Laser(object):
         return lcs
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     ra = []
     laser = Laser(ra)
     a = laser.lcs('abcssd', 'ad3asasdas')

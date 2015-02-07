@@ -361,7 +361,8 @@ class Payload(object):
     def __str__(self):
         return_string = ""
         # Start
-        # return_string += "{0:.2f}".format(round(self.get_min_iat(),2))() + ", "
+        # return_string += "{0:.2f}".format(round(self.get_min_iat(),2))() + ",
+        # "
         return_string += self.get_source_ip() + ","
         return_string += self.get_destination_ip() + ","
         return_string += str(self.get_source_port()) + ","
@@ -483,7 +484,7 @@ class Payload(object):
         return_string += str(self._7payload_size) + ","
         return_string += str(self._7payload_hex) + ","
 
-        return_string += str(self._application)+'\n'
+        return_string += str(self._application) + '\n'
         # return_string += str(self.get_payload())+"\n"
         # End
         return return_string

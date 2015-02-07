@@ -45,7 +45,7 @@ class Extractor(object):
             for pkt in input_file_name:
                 count += 1
                 print(count)
-                packet_information = self.extract_payload(pkt);
+                packet_information = self.extract_payload(pkt)
                 if packet_information:
                     packet_informations.append(packet_information)
         except Exception:
